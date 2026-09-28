@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useStore } from "@/components/providers/store-provider";
-import { ProductImage, StarRating, StockBadge, DeliveryIndicator } from "@/components/ui/primitives";
+import { ProductImage, StarRating, StockBadge } from "@/components/ui/primitives";
 import type { Product } from "@/lib/types";
 import { cx, discountPercent, formatDimensions, formatPrice } from "@/lib/format";
 import { typeTitle } from "@/lib/catalog";
@@ -112,14 +112,6 @@ export function ProductCard({
             {product.name}
           </Link>
         </h3>
-        <p className="mt-0.5 line-clamp-1 text-xs text-ink-muted">{product.nameBn}</p>
-
-        <p className="mt-2 line-clamp-1 text-xs text-ink-soft">
-          <span className="text-ink-muted">Material:</span> {product.material.primary}
-        </p>
-        <p className="mt-1 text-xs text-ink-soft">
-          <span className="text-ink-muted">মাপ:</span> {formatDimensions(product.dimensions)}
-        </p>
 
         {/* Colors */}
         {product.colors.length > 0 && (
@@ -150,36 +142,35 @@ export function ProductCard({
           <StockBadge stock={product.stock} />
         </div>
 
-        <div className="mt-2">
-          <DeliveryIndicator timeBn={product.delivery.timeInsideBn} />
-        </div>
-
         {/* Actions */}
         <div className="mt-3 flex flex-col gap-2">
           <button
             type="button"
             onClick={addToCart}
             disabled={outOfStock}
-            className="btn btn-outline btn-sm btn-block"
+            className="btn btn-outline btn-sm btn-block min-w-0 px-2.5 text-[11px] leading-tight sm:px-4 sm:text-sm"
           >
             কার্টে যোগ করুন
           </button>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid min-w-0 grid-cols-2 gap-1.5 sm:gap-2">
             <a
               href={whatsappUrl(
                 `আসসালামু আলাইকুম। আমি "${product.name}" সম্পর্কে জানতে চাই (WOODORA Demo Website)।`,
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-ghost btn-sm border border-ink/12 text-xs"
+              className="btn btn-ghost btn-sm min-w-0 whitespace-normal break-words border border-ink/12 px-1.5 text-[10px] leading-tight sm:px-3 sm:text-xs"
             >
               জিজ্ঞাসা
             </a>
             <Link
               href={outOfStock ? `/product/${product.slug}` : `/checkout?buy=${product.slug}`}
-              className={cx("btn btn-sm text-xs", outOfStock ? "btn-outline" : "btn-primary")}
+              className={cx(
+                "btn btn-sm min-w-0 whitespace-normal break-words px-1.5 text-[10px] leading-tight sm:px-3 sm:text-xs",
+                outOfStock ? "btn-outline" : "btn-primary",
+              )}
             >
-              {outOfStock ? "বিস্তারিত দেখুন" : "এখনই অর্ডার করুন"}
+              {outOfStock ? "বিস্তারিত" : "অর্ডার করুন"}
             </Link>
           </div>
         </div>
