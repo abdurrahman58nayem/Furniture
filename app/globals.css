@@ -1,0 +1,582 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   WOODORA — Design tokens
+   Premium · Warm · Elegant · Modern
+   ========================================================================== */
+@theme {
+  /* Typography — Latin-এ Inter/Cormorant, বাংলায় Hind Siliguri (fallback) */
+  --font-sans: "Inter", "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", "Inter", "Hind Siliguri", Georgia, serif;
+  --font-bangla: "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+
+  /* Warm neutral surfaces */
+  --color-cream: #faf7f1;
+  --color-linen: #f4eee4;
+  --color-sand: #ece3d6;
+  --color-beige: #dfd2be;
+  --color-clay: #c3b29a;
+  --color-stone: #9c9184;
+
+  /* Natural wood scale */
+  --color-wood-50: #f8f2e9;
+  --color-wood-100: #ebdecb;
+  --color-wood-200: #dcc7a6;
+  --color-wood-300: #c6a97f;
+  --color-wood-400: #b08d5f;
+  --color-wood-500: #96703f;
+  --color-wood-600: #7a5a33;
+  --color-wood-700: #5e4527;
+  --color-wood-800: #43311c;
+  --color-wood-900: #2b1f12;
+
+  /* Charcoal ink */
+  --color-ink: #1d1a16;
+  --color-ink-soft: #4a443c;
+  --color-ink-muted: #7c746a;
+
+  /* Subtle gold */
+  --color-brass: #a9853f;
+  --color-brass-light: #d8bd88;
+  --color-brass-dark: #7d6128;
+
+  /* Feedback */
+  --color-success: #47694f;
+  --color-warn: #a9762f;
+  --color-danger: #9e3b26;
+
+  /* Radii — restrained, furniture-like */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+
+  /* Elevation — soft, never glassy */
+  --shadow-soft: 0 1px 2px rgba(29, 26, 22, 0.04), 0 10px 30px -18px rgba(29, 26, 22, 0.18);
+  --shadow-card: 0 1px 1px rgba(29, 26, 22, 0.03), 0 14px 40px -24px rgba(29, 26, 22, 0.22);
+  --shadow-lift: 0 2px 4px rgba(29, 26, 22, 0.04), 0 24px 60px -30px rgba(29, 26, 22, 0.3);
+  --shadow-bar: 0 -1px 0 rgba(29, 26, 22, 0.06), 0 -12px 30px -22px rgba(29, 26, 22, 0.25);
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-brass-light);
+    color: var(--color-ink);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+
+  /* Bengali text keeps a comfortable rhythm */
+  :lang(bn) h1,
+  :lang(bn) h2,
+  :lang(bn) h3,
+  h1.bn,
+  h2.bn,
+  h3.bn {
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  input[type="range"] {
+    accent-color: var(--color-wood-600);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Layout helpers
+   ========================================================================== */
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 84rem;
+  padding-inline: 1rem;
+  @media (min-width: 768px) {
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 1280px) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility hairline {
+  border-color: color-mix(in srgb, var(--color-wood-800) 12%, transparent);
+}
+
+@utility hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+@layer components {
+  /* ---- Buttons ---- */
+  .btn {
+    --btn-bg: var(--color-ink);
+    --btn-fg: var(--color-cream);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    transition:
+      transform 0.25s var(--ease-out-soft),
+      box-shadow 0.25s var(--ease-out-soft),
+      background-color 0.25s var(--ease-out-soft),
+      color 0.25s var(--ease-out-soft),
+      border-color 0.25s var(--ease-out-soft);
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .btn:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-soft);
+  }
+  .btn:not(:disabled):active {
+    transform: translateY(0);
+  }
+
+  .btn-primary {
+    --btn-bg: var(--color-ink);
+    --btn-fg: var(--color-cream);
+  }
+  .btn-primary:not(:disabled):hover {
+    --btn-bg: var(--color-wood-800);
+  }
+
+  .btn-wood {
+    --btn-bg: var(--color-wood-600);
+    --btn-fg: #fff;
+  }
+  .btn-wood:not(:disabled):hover {
+    --btn-bg: var(--color-wood-700);
+  }
+
+  .btn-brass {
+    --btn-bg: var(--color-brass);
+    --btn-fg: #fff;
+  }
+
+  .btn-outline {
+    --btn-bg: transparent;
+    --btn-fg: var(--color-ink);
+    border-color: color-mix(in srgb, var(--color-ink) 18%, transparent);
+  }
+  .btn-outline:not(:disabled):hover {
+    --btn-bg: var(--color-ink);
+    --btn-fg: var(--color-cream);
+    border-color: var(--color-ink);
+  }
+
+  .btn-light {
+    --btn-bg: rgba(255, 255, 255, 0.92);
+    --btn-fg: var(--color-ink);
+  }
+  .btn-light:not(:disabled):hover {
+    --btn-bg: #fff;
+  }
+
+  .btn-ghost {
+    --btn-bg: transparent;
+    --btn-fg: var(--color-ink);
+    padding-inline: 0.75rem;
+  }
+  .btn-ghost:not(:disabled):hover {
+    --btn-bg: color-mix(in srgb, var(--color-wood-800) 7%, transparent);
+    box-shadow: none;
+  }
+
+  .btn-sm {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+  }
+  .btn-lg {
+    padding: 1.0625rem 2rem;
+    font-size: 1rem;
+  }
+  .btn-block {
+    width: 100%;
+  }
+
+  /* ---- Surfaces ---- */
+  .card {
+    background: #fff;
+    border: 1px solid color-mix(in srgb, var(--color-wood-800) 9%, transparent);
+    border-radius: var(--radius-md);
+  }
+
+  .panel {
+    background: var(--color-linen);
+    border: 1px solid color-mix(in srgb, var(--color-wood-800) 8%, transparent);
+    border-radius: var(--radius-md);
+  }
+
+  /* ---- Eyebrow / section title ---- */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-brass);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.6vw, 2.25rem);
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  .section-sub {
+    color: var(--color-ink-muted);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
+
+  /* ---- Badges ---- */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-xs);
+    letter-spacing: 0.01em;
+  }
+  .badge-discount {
+    background: var(--color-danger);
+    color: #fff;
+  }
+  .badge-new {
+    background: var(--color-ink);
+    color: var(--color-cream);
+  }
+  .badge-best {
+    background: var(--color-brass);
+    color: #fff;
+  }
+  .badge-soft {
+    background: var(--color-sand);
+    color: var(--color-ink-soft);
+  }
+  .badge-in {
+    background: color-mix(in srgb, var(--color-success) 12%, transparent);
+    color: var(--color-success);
+  }
+  .badge-low {
+    background: color-mix(in srgb, var(--color-warn) 14%, transparent);
+    color: var(--color-warn);
+  }
+  .badge-out {
+    background: color-mix(in srgb, var(--color-danger) 10%, transparent);
+    color: var(--color-danger);
+  }
+
+  /* ---- Form fields ---- */
+  .field {
+    width: 100%;
+    background: #fff;
+    border: 1px solid color-mix(in srgb, var(--color-wood-800) 16%, transparent);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 0.875rem;
+    font-size: 0.9375rem;
+    transition: border-color 0.2s var(--ease-out-soft), box-shadow 0.2s var(--ease-out-soft);
+  }
+  .field::placeholder {
+    color: color-mix(in srgb, var(--color-ink-muted) 80%, transparent);
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--color-wood-500);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-wood-300) 35%, transparent);
+  }
+  .field-label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-ink-soft);
+    margin-bottom: 0.375rem;
+  }
+  .field-error {
+    border-color: var(--color-danger);
+  }
+
+  /* ---- Colour / fabric swatch ---- */
+  .swatch {
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    transition: transform 0.2s var(--ease-out-soft);
+  }
+  .swatch[data-active="true"] {
+    box-shadow:
+      0 0 0 2px var(--color-cream),
+      0 0 0 4px var(--color-wood-600);
+  }
+  .swatch:not([data-active="true"]):hover {
+    transform: scale(1.06);
+  }
+
+  /* ---- Skeleton shimmer ---- */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--color-sand) 25%,
+      var(--color-linen) 37%,
+      var(--color-sand) 63%
+    );
+    background-size: 400% 100%;
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+
+  /* ---- Prose-ish text block ---- */
+  .body-text {
+    color: var(--color-ink-soft);
+    font-size: 0.9375rem;
+    line-height: 1.85;
+  }
+}
+
+/* ==========================================================================
+   Keyframes
+   ========================================================================== */
+@keyframes shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes slideUpSheet {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes softPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, #25d366 45%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes cartBump {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.16) rotate(-4deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==========================================================================
+   Animation utilities
+   ========================================================================== */
+@utility animate-fade-up {
+  animation: fadeUp 0.6s var(--ease-out-soft) both;
+}
+@utility animate-fade-in {
+  animation: fadeIn 0.45s var(--ease-out-soft) both;
+}
+@utility animate-zoom-in {
+  animation: zoomIn 0.35s var(--ease-out-soft) both;
+}
+@utility animate-pop {
+  animation: popIn 0.35s var(--ease-out-soft) both;
+}
+@utility animate-cart-bump {
+  animation: cartBump 0.45s var(--ease-out-soft);
+}
+@utility animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* Scroll reveal (IntersectionObserver driven) */
+@layer components {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s var(--ease-out-soft),
+      transform 0.7s var(--ease-out-soft);
+    will-change: opacity, transform;
+  }
+  .reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Misc
+   ========================================================================== */
+@layer utilities {
+  .image-zoom img {
+    transition: transform 0.9s var(--ease-out-soft);
+  }
+  .image-zoom:hover img {
+    transform: scale(1.06);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
