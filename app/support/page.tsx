@@ -210,7 +210,7 @@ export default function SupportPage() {
 
             {/* FAQ */}
             <section id="faq" className="scroll-mt-28">
-              <SectionHeading eyebrow="FAQ" title="সাধারণ জিজ্ঞাসা" />
+              <SectionHeading eyebrow="প্রশ্নোত্তর" title="সাধারণ জিজ্ঞাসা" />
               <div className="mt-5 divide-y divide-ink/8 overflow-hidden rounded-md border border-ink/8 bg-white">
                 {FAQS.map((faq) => (
                   <details key={faq.q} className="group">

@@ -97,7 +97,7 @@ const seeds: ProductSeed[] = [
       "সফট-ক্লোজ হিঞ্জ",
     ],
     extraSpecs: [
-      { labelBn: "Storage", valueBn: "২ দরজা + ২ ড্রয়ার" },
+      { labelBn: "স্টোরেজ", valueBn: "২ দরজা + ২ ড্রয়ার" },
       { labelBn: "শেলফ", valueBn: "অ্যাডজাস্টেবল (৩ অবস্থান)" },
     ],
     warranty: WARRANTY.oneYear,
@@ -272,7 +272,7 @@ const seeds: ProductSeed[] = [
       "দুই দিক থেকেই ফিনিশড",
     ],
     extraSpecs: [
-      { labelBn: "Storage", valueBn: "২টি ড্রয়ার + ১ ওপেন শেলফ" },
+      { labelBn: "স্টোরেজ", valueBn: "২টি ড্রয়ার + ১ ওপেন শেলফ" },
       { labelBn: "গভীরতা", valueBn: "১৪ inch" },
     ],
     warranty: WARRANTY.oneYear,

@@ -17,7 +17,7 @@ export const siteConfig = {
   /* ---------- Demo attribution (CodePixel Web) ---------- */
   agency: {
     name: "CodePixel Web",
-    tagline: "Premium Web Design & Development for Growing Businesses",
+    tagline: "বাংলাদেশি ব্যবসার জন্য প্রিমিয়াম ওয়েবসাইট ডিজাইন ও ডেভেলপমেন্ট",
     creditLine: "Demo Website by CodePixel Web",
     noticeBn: "এই ওয়েবসাইটটি CodePixel Web-এর একটি ডেমো প্রজেক্ট।",
     noticeFooterBn:

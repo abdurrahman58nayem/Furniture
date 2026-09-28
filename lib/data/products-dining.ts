@@ -44,7 +44,7 @@ const seeds: ProductSeed[] = [
     ],
     extraSpecs: [
       { labelBn: "Seating", valueBn: "৬ জন" },
-      { labelBn: "Top Thickness", valueBn: "৩০ মিমি" },
+      { labelBn: "টপের পুরুত্ব", valueBn: "৩০ মিমি" },
       { labelBn: "চেয়ার", valueBn: "আলাদা বিক্রি হয়" },
     ],
     warranty: WARRANTY.twoYear,
@@ -240,7 +240,7 @@ const seeds: ProductSeed[] = [
     ],
     extraSpecs: [
       { labelBn: "সেটের অংশ", valueBn: "১টি টেবিল + ৬টি চেয়ার" },
-      { labelBn: "Top Thickness", valueBn: "৪০ মিমি" },
+      { labelBn: "টপের পুরুত্ব", valueBn: "৪০ মিমি" },
       { labelBn: "চেয়ারের পিঠ", valueBn: "প্রাকৃতিক বেত" },
     ],
     warranty: WARRANTY.twoYear,

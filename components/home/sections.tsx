@@ -318,7 +318,7 @@ export function CollectionsSection() {
                   <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-5">
                     <div>
                       <p className="text-[11px] uppercase tracking-wide text-cream/50">
-                        Bundle price
+                        একসাথে নিলে দাম
                       </p>
                       <p className="flex items-baseline gap-2">
                         <span className="text-lg font-semibold text-cream">
@@ -374,7 +374,7 @@ export function SmallSpaceSection() {
           <div className="order-1 p-6 md:p-9 lg:order-2">
             <span className="eyebrow">
               <span className="h-px w-6 bg-brass/60" aria-hidden="true" />
-              Small Space Living
+              ছোট জায়গার জন্য
             </span>
             <h2 className="section-title mt-3">ছোট জায়গার জন্য Smart Furniture</h2>
             <p className="section-sub mt-3">
@@ -460,7 +460,7 @@ export function ReviewsSection() {
       <SectionHeading
         eyebrow="ক্রেতাদের মতামত"
         title="ক্রেতাদের মতামত"
-        subtitle="নিচের মতামতগুলো ডেমো উপস্থাপনার জন্য তৈরি — verified purchase নয়।"
+        subtitle="নিচের মতামতগুলো ডেমো উপস্থাপনার জন্য তৈরি — যাচাইকৃত ক্রয় নয়।"
       />
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {HOME_REVIEWS.map((review, index) => (
@@ -540,7 +540,7 @@ export function AgencyCtaBand() {
               আপনার Furniture Business-এর জন্যও এমন Website চান?
             </h2>
             <p className="section-sub mt-3 max-w-xl">
-              এটির মতো Premium, Mobile-first ও Conversion-focused E-commerce Website আপনার
+              এটির মতো Premium, Mobile-first ও বিক্রয়-কেন্দ্রিক E-commerce Website আপনার
               ব্যবসার জন্য তৈরি করা যায় — Product, Cart, Checkout ও WhatsApp অর্ডার সুবিধাসহ।
             </p>
             <div className="mt-6 flex flex-wrap gap-3">

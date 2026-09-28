@@ -42,7 +42,7 @@ const seeds: ProductSeed[] = [
       "৩০ ইঞ্চি উচ্চতা — এরগোনমিক সিটিং পজিশন",
     ],
     extraSpecs: [
-      { labelBn: "Storage", valueBn: "৩টি ড্রয়ার + ১টি কেবিনেট" },
+      { labelBn: "স্টোরেজ", valueBn: "৩টি ড্রয়ার + ১টি কেবিনেট" },
       { labelBn: "কেবল ম্যানেজমেন্ট", valueBn: "পিছনে গ্ৰোমেট সহ" },
       { labelBn: "চেয়ার", valueBn: "আলাদা বিক্রি হয়" },
     ],
@@ -101,7 +101,7 @@ const seeds: ProductSeed[] = [
       "কোনো ভারী হার্ডওয়্যার নেই — পরিষ্কার লুক",
     ],
     extraSpecs: [
-      { labelBn: "Storage", valueBn: "১টি স্লিম ড্রয়ার" },
+      { labelBn: "স্টোরেজ", valueBn: "১টি স্লিম ড্রয়ার" },
       { labelBn: "ল্যাপটপ সাইজ", valueBn: "১৭ inch পর্যন্ত" },
     ],
     warranty: WARRANTY.oneYear,
@@ -167,7 +167,7 @@ const seeds: ProductSeed[] = [
     ],
     extraSpecs: [
       { labelBn: "ফ্রি অ্যাকসেসরি", valueBn: "১টি ওয়াল শেলফ" },
-      { labelBn: "লোড ক্যাপাসিটি", valueBn: "৪০ কেজি পর্যন্ত" },
+      { labelBn: "লোড ধারণক্ষমতা", valueBn: "৪০ কেজি পর্যন্ত" },
     ],
     warranty: WARRANTY.sixMonth,
     installation: INSTALLATION.selfAssembly,
@@ -225,7 +225,7 @@ const seeds: ProductSeed[] = [
       "১০৫° ব্যাক টিল্ট ও লক",
     ],
     extraSpecs: [
-      { labelBn: "লোড ক্যাপাসিটি", valueBn: "১২০ কেজি পর্যন্ত" },
+      { labelBn: "লোড ধারণক্ষমতা", valueBn: "১২০ কেজি পর্যন্ত" },
       { labelBn: "আর্মরেস্ট", valueBn: "অ্যাডজাস্টেবল ফোম প্যাড" },
       { labelBn: "রিক্লাইন", valueBn: "১০৫° টিল্ট ও লক" },
     ],
@@ -284,7 +284,7 @@ const seeds: ProductSeed[] = [
       "ক্রোম ফিনিশ বেস — মরিচা ধরে না",
     ],
     extraSpecs: [
-      { labelBn: "লোড ক্যাপাসিটি", valueBn: "১৫০ কেজি পর্যন্ত" },
+      { labelBn: "লোড ধারণক্ষমতা", valueBn: "১৫০ কেজি পর্যন্ত" },
       { labelBn: "আর্মরেস্ট", valueBn: "৪D অ্যাডজাস্টেবল" },
       { labelBn: "বেস", valueBn: "ক্রোম ফিনিশ, ৫ স্টার" },
     ],

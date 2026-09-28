@@ -71,7 +71,7 @@ export default function CollectionsPage() {
                 <div className="mt-5 flex items-end justify-between gap-4 border-t border-ink/8 pt-4">
                   <div>
                     <p className="text-[11px] uppercase tracking-wide text-ink-muted">
-                      Bundle price
+                      একসাথে নিলে দাম
                     </p>
                     <p className="flex items-baseline gap-2">
                       <span className="font-display text-xl font-semibold">

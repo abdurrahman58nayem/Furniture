@@ -151,7 +151,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <section className="bg-linen py-12 md:py-16">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Room Fit"
+            eyebrow="ঘরের উপযোগিতা"
             title="কোন জায়গার জন্য উপযুক্ত?"
             subtitle="ডেমো লজিক অনুযায়ী আপনার ঘরের আকারের সঙ্গে মিলিয়ে দেখুন।"
           />
@@ -330,7 +330,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       {related.length > 0 && (
         <section className="container-page py-12 md:py-16">
           <SectionHeading
-            eyebrow="Related"
+            eyebrow="সম্পর্কিত"
             title="আপনার পছন্দ হতে পারে"
             subtitle={`${departmentTitle(product.department)}-এর সঙ্গে দারুণ মানায় এমন Furniture`}
             action={

@@ -35,7 +35,7 @@ function buildSpecifications(seed: ProductSeed): Specification[] {
       valueBn: seed.colors.map((color) => color.name).join(" / "),
     },
     { labelBn: "Size", valueBn: formatDimensions(seed.dimensions) },
-    { labelBn: "Weight", valueBn: `${toBanglaDigits(seed.weightKg)} কেজি (প্রায়)` },
+    { labelBn: "ওজন", valueBn: `${toBanglaDigits(seed.weightKg)} কেজি (প্রায়)` },
     { labelBn: "Assembly", valueBn: seed.assemblyBn },
     { labelBn: "Warranty", valueBn: seed.warranty.labelBn },
     ...(material.hardware ? [{ labelBn: "Hardware", valueBn: material.hardware }] : []),

@@ -34,7 +34,7 @@ export default function OffersPage() {
         <div className="container-page relative py-12 md:py-16">
           <span className="eyebrow text-brass-light">
             <span className="h-px w-6 bg-brass-light/70" aria-hidden="true" />
-            Limited Time Offer
+            সীমিত সময়ের অফার
           </span>
           <h1 className="mt-4 font-display text-3xl font-semibold text-cream md:text-4xl">
             আজকের Furniture অফার
@@ -93,7 +93,7 @@ export default function OffersPage() {
       <section className="bg-linen py-12 md:py-16">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Bundle"
+            eyebrow="একসাথে কিনুন"
             title="পুরো ঘর একসাথে — বেশি সাশ্রয়"
             subtitle="Collection একসাথে নিলে আলাদা কেনার চেয়ে ১২% পর্যন্ত কম দাম।"
             action={

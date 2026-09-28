@@ -71,7 +71,7 @@ export default async function CollectionDetailPage({
 
           <div className="mt-7 flex flex-wrap items-end gap-6 rounded-md border border-cream/12 bg-cream/[0.06] p-5 backdrop-blur-sm">
             <div>
-              <p className="text-[11px] uppercase tracking-wide text-cream/60">Bundle price</p>
+              <p className="text-[11px] uppercase tracking-wide text-cream/60">একসাথে নিলে দাম</p>
               <p className="flex items-baseline gap-3">
                 <span className="font-display text-2xl font-semibold text-cream">
                   {formatPrice(collection.bundlePrice)}
